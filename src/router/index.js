@@ -3,7 +3,9 @@ import Router from 'vue-router'
 import downLoad from '@/components/test/downLoad'
 import vuex from '@/components/test/vuex/vuex'
 
-import home from '@/components/home'
+import home from '@/views/home'
+import register from '@/views/register'
+import login from '@/views/login'
 
 Vue.use(Router)
 
@@ -21,8 +23,25 @@ export default new Router({
     },
     {
       path: '/',
+      redirect: '/home'
+    },
+    {
+      path: '/home',
       name: 'home',
-      component: home
+      component: home,
+      meta: {
+        requireAuth: true
+      }
+    },
+    {
+      path: '/register',
+      name: 'register',
+      component: register
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: login
     }
   ]
 })

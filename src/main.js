@@ -7,19 +7,33 @@ import router from './router'
 import store from './store'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-import axios from 'axios'
-import VueAxios from 'vue-axios'
+import axios from './http'
 
-Vue.use(VueAxios, axios)
 Vue.use(VueRouter)
 Vue.use(ElementUI)
 Vue.config.productionTip = false
+// router.beforeEach((to, from, next) => {
+//   if (to.meta.requireAuth) { // 判断该路由是否需要登录权限
+//     if (localStorage.getItem('token') === 'token_on') { // 通过vuex state获取当前的token是否存在
+//       next()
+//     } else {
+//       next({
+//         path: '/login',
+//         query: {redirect: to.fullPath} // 将跳转的路由path作为参数，登录成功后跳转到该路由
+//       })
+//     }
+//   } else {
+//     next()
+//   }
+// })
+Vue.prototype.axios = axios
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
   store,
+  axios,
   components: { App },
   template: '<App/>'
 })

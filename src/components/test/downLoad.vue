@@ -58,7 +58,7 @@ export default {
   methods: {
     submit () {
       this.axios
-        .post('http:// 192.168.6.102:3000/home', {
+        .post('/api/home', {
           id: this.msg
         })
         .then(res => {

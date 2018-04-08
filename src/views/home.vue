@@ -13,11 +13,11 @@ export default {
   },
   components: {
     Header: header
+  },
+  mounted () {
   }
 }
 </script>
 
 <style scoped>
-#home{
-}
 </style>
