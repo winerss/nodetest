@@ -6,7 +6,8 @@ Vue.use(Vuex)
 
 // 定义store
 let state = {
-  count: 10 // 定义一个状态
+  count: 10, // 定义一个状态
+  ua: 'other'
 }
 export default new Vuex.Store({
   state,

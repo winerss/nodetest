@@ -4,6 +4,7 @@
       <div class="logo"><img :src="img.logo" alt=""></div>
       <el-button style="float: right; margin: 20px 5%" @click="logout()" type="primary" size="mini">退出</el-button>
     </div>
+    {{ua}}
     <div class="navbar">
       <el-tabs v-model="activeName" @tab-click="handleClick">
         <el-tab-pane v-for="item in navbar" :key="item.id" label="用户管理" :name="item.key"></el-tab-pane>
@@ -45,8 +46,10 @@ export default {
       this.$router.push('login')
     }
   },
-  mounted () {
-    this.getData()
+  computed: {
+    ua () {
+      return this.$store.state.ua.ua
+    }
   }
 }
 </script>

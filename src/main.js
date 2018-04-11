@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import VueRouter from 'vue-router'
 import router from './router'
+import base from './common/base'
 import store from './store'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
@@ -11,6 +12,7 @@ import axios from './http'
 
 Vue.use(VueRouter)
 Vue.use(ElementUI)
+Vue.use(base)
 Vue.config.productionTip = false
 // router.beforeEach((to, from, next) => {
 //   if (to.meta.requireAuth) { // 判断该路由是否需要登录权限

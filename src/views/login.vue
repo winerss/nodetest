@@ -55,6 +55,9 @@ export default {
     register () {
       this.$router.push('/register')
     }
+  },
+  mounted () {
+    console.log(localStorage.getItem('ua'))
   }
 }
 </script>

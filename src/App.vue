@@ -1,12 +1,33 @@
 <template>
   <div id="app">
+    {{ua}}
     <router-view></router-view>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  data () {
+    return {
+    }
+  },
+  computed: {
+    ua () {
+      return this.$store.state.ua.ua
+    }
+  },
+  methods: {
+    changeUa () {
+      // 改变state状态
+      this.$store.commit('updateUa', {
+        ua: 'ua'
+      })
+    }
+  },
+  mounted () {
+    this.changeUa()
+  }
 }
 </script>
 
